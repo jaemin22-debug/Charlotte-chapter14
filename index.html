@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charlotte's Web - Chapter 14 Quiz</title>
+  <style>
+    :root {
+      --primary-color: #2b5b84;
+      --primary-hover: #1d3e5a;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --quote-bg: #f1f5f9;
+      --accent: #0284c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    header h1 {
+      font-size: 1.85rem;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .score-banner {
+      display: none;
+      background: #eff6ff;
+      border: 2px solid #93c5fd;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .score-banner.visible {
+      display: block;
+    }
+
+    .score-banner h2 {
+      font-size: 1.5rem;
+      color: #1e40af;
+      margin-bottom: 4px;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .q-number {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .quote-box {
+      background: var(--quote-bg);
+      border-left: 4px solid var(--primary-color);
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #334155;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    .q-prompt {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .option-label:hover {
+      background-color: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .option-label input[type="radio"] {
+      margin-right: 12px;
+      accent-color: var(--primary-color);
+      transform: scale(1.1);
+    }
+
+    .option-text {
+      font-size: 0.98rem;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 36px;
+      margin-bottom: 48px;
+    }
+
+    .btn-submit {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Charlotte's Web — Chapter 14 Quiz</h1>
+      <p>Answer all 6 questions and submit to check your score.</p>
+    </header>
+
+    <div id="scoreBanner" class="score-banner">
+      <h2 id="scoreText">Your Score: 0 / 6</h2>
+    </div>
+
+    <form id="quizForm">
+      <!-- Question 1 -->
+      <div class="question-card">
+        <div class="q-number">Question 1</div>
+        <div class="quote-box">
+          “Oh, it happened all right,” replied Fern. “Charlotte never fibs. This cousin of hers built a web across a stream.”
+        </div>
+        <div class="q-prompt">
+          In the passage above, which word is closest in meaning to <strong>“fibs”</strong>?
+        </div>
+        <div class="options">
+          <label class="option-label">
+            <input type="radio" name="q1" value="A" />
+            <span class="option-text">A) boasts</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q1" value="B" />
+            <span class="option-text">B) lies</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q1" value="C" />
+            <span class="option-text">C) complains</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q1" value="D" />
+            <span class="option-text">D) forgets</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-card">
+        <div class="q-number">Question 2</div>
+        <div class="quote-box">
+          “Fern!” snapped her mother. “Stop it! Stop inventing these wild tales!”<br />
+          “I’m not inventing,” said Fern. “I’m just telling you the facts.”<br />
+          “What finally happened?” asked her mother, <u>whose curiosity began to get the better of her</u>.
+        </div>
+        <div class="q-prompt">
+          Which of the following best paraphrases the underlined expression: <strong>“whose curiosity began to get the better of her”</strong>?
+        </div>
+        <div class="options">
+          <label class="option-label">
+            <input type="radio" name="q2" value="A" />
+            <span class="option-text">A) who lost all interest in hearing the rest of the story</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="B" />
+            <span class="option-text">B) whose curiosity was completely satisfied by Fern's explanation</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="C" />
+            <span class="option-text">C) who could no longer resist her desire to find out what happened</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="D" />
+            <span class="option-text">D) who stayed calm and ignored Fern's strange imagination</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-card">
+        <div class="q-number">Question 3</div>
+        <div class="quote-box">
+          [Mrs. Arable said,] “You’re spending too much time in that barn—it isn’t good for you to be alone so much.”<br />
+          “Alone?” said Fern. “Alone? My best friends are in the barn cellar. It is a very <strong>[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</strong> place. Not at all lonely.”
+        </div>
+        <div class="q-prompt">
+          Which word best fits in the blank in Fern’s reply?
+        </div>
+        <div class="options">
+          <label class="option-label">
+            <input type="radio" name="q3" value="A" />
+            <span class="option-text">A) mysterious</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q3" value="B" />
+            <span class="option-text">B) dangerous</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q3" value="C" />
+            <span class="option-text">C) silent</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q3" value="D" />
+            <span class="option-text">D) sociable</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-card">
+        <div class="q-number">Question 4</div>
+        <div class="quote-box">
+          “If Fern says that the animals in Zuckerman’s barn talk, I’m quite ready to believe her. Perhaps if people talked less, animals would talk more. People are incessant talkers—I can give you my word on <u>that</u>.”
+        </div>
+        <div class="q-prompt">
+          In the passage above, what does the underlined word <strong>“that”</strong> refer to?
+        </div>
+        <div class="options">
+          <label class="option-label">
+            <input type="radio" name="q4" value="A" />
+            <span class="option-text">A) The fact that human beings talk constantly</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q4" value="B" />
+            <span class="option-text">B) The animals' secret conversation in Zuckerman's barn</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q4" value="C" />
+            <span class="option-text">C) Fern's wild imagination and storytelling</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q4" value="D" />
+            <span class="option-text">D) The adult habit of paying close attention to children</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-card">
+        <div class="q-number">Question 5</div>
+        <div class="q-prompt">
+          Why does Mrs. Arable go to visit Dr. Dorian in Chapter 14?
+        </div>
+        <div class="options">
+          <label class="option-label">
+            <input type="radio" name="q5" value="A" />
+            <span class="option-text">A) To ask for medicine because Wilbur the pig has fallen ill</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q5" value="B" />
+            <span class="option-text">B) Because she is worried that Fern spends too much time alone with barn animals</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q5" value="C" />
+            <span class="option-text">C) To invite him to the upcoming county fair with her family</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q5" value="D" />
+            <span class="option-text">D) Because Avery got hurt while playing outside</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question-card">
+        <div class="q-number">Question 6</div>
+        <div class="q-prompt">
+          What advice does Dr. Dorian give to Mrs. Arable regarding Fern?
+        </div>
+        <div class="options">
+          <label class="option-label">
+            <input type="radio" name="q6" value="A" />
+            <span class="option-text">A) Fern should be forbidden from visiting Zuckerman's barn immediately.</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q6" value="B" />
+            <span class="option-text">B) Fern needs immediate medical treatment for her wild imagination.</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q6" value="C" />
+            <span class="option-text">C) She should not worry because Fern is healthy and will naturally grow interested in other things over time.</span>
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q6" value="D" />
+            <span class="option-text">D) Fern should be sent away to another town to make new friends.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button type="button" class="btn-submit" onclick="gradeQuiz()">Submit Answers</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const answerKey = {
+      q1: "B",
+      q2: "C",
+      q3: "D",
+      q4: "A",
+      q5: "B",
+      q6: "C"
+    };
+
+    function gradeQuiz() {
+      let score = 0;
+      const total = Object.keys(answerKey).length;
+
+      for (const [key, correctVal] of Object.entries(answerKey)) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === correctVal) {
+          score++;
+        }
+      }
+
+      const scoreBanner = document.getElementById("scoreBanner");
+      const scoreText = document.getElementById("scoreText");
+      scoreText.textContent = `Your Score: ${score} / ${total}`;
+      scoreBanner.classList.add("visible");
+      scoreBanner.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  </script>
+</body>
+</html>
